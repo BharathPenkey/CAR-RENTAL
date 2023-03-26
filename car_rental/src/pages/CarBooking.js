@@ -2,7 +2,7 @@ import React from 'react'
 
 const CarBooking = () => {
   return (
-    <div>CarBooking</div>
+    <div>CarBookg</div>
   )
 }
 
