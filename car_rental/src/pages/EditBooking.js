@@ -1,9 +1,9 @@
 import React from 'react'
-import "../styles/BookingDetails.css";
+import "../styles/EditBooking.css";
 import { Link } from 'react-router-dom';
 
 
-const BookingDetails = () => {
+const EditBooking = () => {
   return (
 
 
@@ -124,7 +124,7 @@ const BookingDetails = () => {
           <input type="checkbox">It is a long established fact</input>
           </label> */}
 
-          <Link to="/mybooking">
+          <Link to="/MyBookings">
             <button className='proceed-btn'>Proceed</button>
           </Link>
 
@@ -138,4 +138,4 @@ const BookingDetails = () => {
   )
 }
 
-export default BookingDetails
+export default EditBooking
