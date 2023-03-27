@@ -52,10 +52,6 @@ userSchema.statics.signup = async function (email,password) {
 }
 
 
-
-
-
-
 //STATIC LOGIN METHOD
 userSchema.statics.login = async function (email, password){
   
@@ -80,8 +76,6 @@ userSchema.statics.login = async function (email, password){
 
     return user
 }
-
-
 
 
 module.exports = mongoose.model("User" , userSchema)

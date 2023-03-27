@@ -58,7 +58,7 @@ const EditBooking = () => {
             </div>
 
             <div className='mini-3rd-div-img'>
-              <img src='https://media.istockphoto.com/id/1189064346/photo/city-map-with-pin-pointers-3d-rendering-image.jpg?s=1024x1024&w=is&k=20&c=-3POKT2aEewXDl6xt1jppyucu2rnu_RNNXSIolTDzlo=' alt='photu' />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28788.78777019961!2d85.16637504100797!3d25.58502223107953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5f5876b1ada3%3A0xc899c99a139e72e8!2sMahindra%20Kiran%20Automobiles!5e0!3m2!1sen!2sin!4v1679926472552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
           </div>
@@ -124,7 +124,7 @@ const EditBooking = () => {
           <input type="checkbox">It is a long established fact</input>
           </label> */}
 
-          <Link to="/mybooking">
+          <Link to="/admin">
             <button className='proceed-btn'>Proceed</button>
           </Link>
 
