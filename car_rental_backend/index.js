@@ -2,7 +2,7 @@ require("dotenv").config()
 
 const express = require("express")
 const mongoose = require("mongoose") 
-// const userRouter = require('./routes/user')
+const userRouter = require('./routes/user')
 const adminRouter = require('./routes/admin')
 const  carRouter = require('./routes/Car')
 
@@ -28,13 +28,9 @@ mongoose.connect(process.env.MONGO_URI)
     console.log(error)
 })
 
-
-
-
-
-
 app.use('./carRental/car',carRouter)
 app.use('/carRental/admin' ,adminRouter)
+app.use('/carRental/user' ,userRouter)
 
 
 
