@@ -15,35 +15,27 @@
     flex-direction: column;
 
 }
+.title3{
+    display: flex;
+    justify-content: start;
+}
+
 .top-div{
     width: 800px;
+    /* height: 200px; */
     display: flex;
-    flex-direction: column;
-    /* gap: 50px; */
+    /* flex-direction: row; */
+    gap: 80px;
     padding: 5px 5px;
-}
-
-.title1{
-    display: flex;
-    justify-content: center;
-}
-
-.NAME{
-    display: flex;
-    justify-content: flex-start;
-    gap: 80px;
-    margin-top: 30px;
-}
-
-.NUMBER{
-    display: flex;
-    justify-content: flex-start;
-    gap: 80px;
-    margin-top: 30px;
-
+    
 }
 
 
+.mini-3rd-div-img img{
+    width: 150px;
+    height: 100px;
+   
+}
 
 .mid-div{
     width: 800px;
