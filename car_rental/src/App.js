@@ -6,8 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quote from './pages/Quote';
 import Admin from './pages/Admin';
 import AddCars from './pages/AddCar';
-import EditBooking from './pages/EditBooking';
 import MyBooking from './pages/MyBooking';
+import EditBooking from './pages/EditBooking';
 
 
 

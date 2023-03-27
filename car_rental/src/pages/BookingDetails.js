@@ -11,29 +11,34 @@ const BookingDetails = () => {
 
       <section className='left-box'>
 
-        <div className='top-div'>
-          <div>
-            <h3 className='title1' >Booking Details</h3>
+        <div>
+          <h3 className='title1' >Booking Details</h3>
+        </div>
+
+        <div>
+          <div className='mid-div'>
+
+            <div>
+              <p>Car Name</p>
+              <p>Car Number</p>
+
+            </div>
+
+            <div>
+              <h3>Toyota Innova 6 seater</h3>
+              <p>KA 37 BB 9999</p>
+
+            </div>
+
+            <div className='mini-3rd-div-img'>
+              <img src='https://images.unsplash.com/photo-1441148345475-03a2e82f9719?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='photu' />
+            </div>
+
           </div>
-
-          <div className='NAME'>
-            <p>Car Name</p>
-            <p>TOyota Innova 6 seater</p>
-
-          </div>
-
-          <div className='NUMBER'>
-            <p>Car Number</p>
-            <p>KA 67 BB 8889</p>
-
-          </div>
-          {/* <hr /> */}
 
         </div>
 
         <hr />
-
-
 
         <div>
           <div className='mid-div'>
@@ -52,9 +57,8 @@ const BookingDetails = () => {
               <p>17-June-2019</p>
             </div>
 
-            <div>
-              {/* <img/> */}
-
+            <div className='mini-3rd-div-img'>
+              <img src='https://media.istockphoto.com/id/1189064346/photo/city-map-with-pin-pointers-3d-rendering-image.jpg?s=1024x1024&w=is&k=20&c=-3POKT2aEewXDl6xt1jppyucu2rnu_RNNXSIolTDzlo=' alt='photu' />
             </div>
 
           </div>

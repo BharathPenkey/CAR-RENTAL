@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/MyBooking.css";
+import { Link } from 'react-router-dom';
 
 
 const MyBooking = () => {
@@ -67,7 +68,7 @@ const MyBooking = () => {
           </div>
 
           <div className='five-div'>
-            <button className='edit-btn'>Edit</button>
+          <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
 
             <button className='can-btn'>Cancel</button>
 
@@ -80,7 +81,7 @@ const MyBooking = () => {
 
         <div className='div-2'>
 
-        <div className='one-div'>
+          <div className='one-div'>
             <img src='https://images.unsplash.com/photo-1441148345475-03a2e82f9719?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='photu' />
           </div>
 
@@ -138,7 +139,7 @@ const MyBooking = () => {
           </div>
 
           <div className='five-div'>
-            <button className='edit-btn'>Edit</button>
+            <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
 
             <button className='can-btn'>Cancel</button>
 
@@ -150,7 +151,7 @@ const MyBooking = () => {
 
         <div className='div-3'>
 
-        <div className='one-div'>
+          <div className='one-div'>
             <img src='https://images.unsplash.com/photo-1441148345475-03a2e82f9719?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='photu' />
           </div>
 
@@ -208,8 +209,7 @@ const MyBooking = () => {
           </div>
 
           <div className='five-div'>
-            <button className='edit-btn'>Edit</button>
-
+          <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
             <button className='can-btn'>Cancel</button>
 
           </div>
