@@ -5,7 +5,6 @@
     background-color: white;
     /* overflow-y: hidden; */
     display: flex;
-    background-color: rgb(247, 236, 236);
 }
 
 .left-box{
@@ -16,9 +15,9 @@
     flex-direction: column;
 
 }
-.title1{
+.title3{
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 .top-div{

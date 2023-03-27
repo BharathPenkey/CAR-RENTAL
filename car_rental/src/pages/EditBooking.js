@@ -1,9 +1,9 @@
 import React from 'react'
-import "../styles/BookingDetails.css";
+import "../styles/EditBooking.css";
 import { Link } from 'react-router-dom';
 
 
-const BookingDetails = () => {
+const EditBooking = () => {
   return (
 
 
@@ -12,7 +12,7 @@ const BookingDetails = () => {
       <section className='left-box'>
 
         <div>
-          <h3 className='title1' >Booking Details</h3>
+          <h3 className='title3' >Edit Booking Details</h3>
         </div>
 
         <div>
@@ -87,11 +87,7 @@ const BookingDetails = () => {
 
         <button className='cancel-btn'> Cancel </button>
 
-        <section>
-
-        </section>
-
-
+        
       </section>
 
       <section className='right-box'>
@@ -128,7 +124,7 @@ const BookingDetails = () => {
           <input type="checkbox">It is a long established fact</input>
           </label> */}
 
-          <Link to="/mybooking">
+          <Link to="/admin">
             <button className='proceed-btn'>Proceed</button>
           </Link>
 
@@ -142,4 +138,4 @@ const BookingDetails = () => {
   )
 }
 
-export default BookingDetails
+export default EditBooking

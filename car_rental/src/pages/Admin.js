@@ -25,7 +25,7 @@ const Admin = () => {
 
                 {
                     data.map((item, index) => {
-                        // <Cards item={item} />
+                       
                         return (
                             <div key={index} className='cards'>
 
