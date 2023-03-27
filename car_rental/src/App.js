@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Quote from './pages/Quote';
 import Admin from './pages/Admin';
 import AddCars from './pages/AddCar';
+import EditCar from './pages/EditCar';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
            <Route path='/carbooking' element={<CarBooking/>}/>
            <Route path='/quote' element={<Quote/>}/>
             <Route path="/BookingDetails" element={<BookingDetails/>}/>
+            <Route path="/editcardetails" element={<EditCar/>}/>
          
           </Routes>
       </BrowserRouter>
