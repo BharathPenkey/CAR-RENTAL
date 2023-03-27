@@ -12,7 +12,6 @@ import EditBooking from './pages/EditBooking';
 import Navbar from './components/Navbar';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
-
 import { AdminLogin } from './pages/AdminLogin';
 
 
