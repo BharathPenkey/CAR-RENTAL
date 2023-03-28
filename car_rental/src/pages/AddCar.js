@@ -155,9 +155,10 @@ function AddCars() {
                             onChange={HandleChange}
                         ></textarea>
 
-                    </div>
-                </div>
-                <Link to="/admin"><button id="cancel" >Cancel</button></Link>
+                    </div>  
+                </div >
+                <div className="c-btn"><Link to="/admin"><button id="cancel" >Cancel</button></Link></div>
+                
             </div>
             <div className="sec2">
                 <div className="dev">
@@ -183,8 +184,8 @@ function AddCars() {
                         name="details"
                         onChange={HandleChange}></textarea>
                 </div>
-                <div><button className="add"
-                    onClick={Submitdata}>Add </button></div>
+                <div><Link to="/admin"><button className="add"
+                    onClick={Submitdata}>Add </button></Link></div>
             </div>
         </div>
     </>

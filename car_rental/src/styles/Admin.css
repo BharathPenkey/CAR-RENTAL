@@ -105,7 +105,6 @@ section {
     background-color: rgb(62, 137, 137);
   
     /* float: right; */
-    
 
 }
 
@@ -113,7 +112,7 @@ section {
     color: rgba(0, 0, 0, 0.4);
     /* float: left; */
     font-size: 0.8rem;
-}
+} 
 .fare-btn{
     display: flex;
     gap: 50px;
