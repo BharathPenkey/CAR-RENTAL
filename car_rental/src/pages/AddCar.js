@@ -155,7 +155,7 @@ function AddCars() {
                             onChange={HandleChange}
                         ></textarea>
 
-                    </div>
+                    </div> 
                 </div >
                 <div className="c-btn"><Link to="/admin"><button id="cancel" >Cancel</button></Link></div>
                 
