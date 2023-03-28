@@ -16,13 +16,13 @@ const Quote = () => {
 
                         <div className='input'>
                             <label>
-                                <input type="date" placeholder="start date" />
+                                <input type="date" placeholder="startdate" />
                             </label>
                         </div>
 
                         <div className='input'>
                             <label>
-                                <input type="date" placeholder="retrun date" />
+                                <input type="date" placeholder=" enddate" />
                             </label>
                         </div>
                         <Link to="/CarBooking"><button className='check-btn'>
