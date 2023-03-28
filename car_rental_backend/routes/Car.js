@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get('/carDetails', getALLCarDetails);
 
+router.post('/newBooking', createNewCarDetail)
 
-router.post('/newCarDetail', createNewCarDetail)
+
+
 module.exports = router
