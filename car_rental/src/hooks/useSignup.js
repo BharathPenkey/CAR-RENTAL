@@ -32,7 +32,7 @@ export const useSignup = () => {
         if(response.ok){
             //save the user in localstorage
             localStorage.setItem('user', JSON.stringify(json))
-            navigate('/carbooking')
+            navigate('/quote')
            
             //update the auth context
             dispatch({type: 'LOGIN', payload : json})
