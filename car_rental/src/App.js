@@ -7,7 +7,7 @@ import BookingDetails from './pages/BookingDetails';
 import Quote from './pages/Quote';
 import Admin from './pages/Admin';
 import AddCars from './pages/AddCar';
-import MyBooking from './pages/MyBooking';
+// import MyBooking from './pages/MyBooking';
 import EditBooking from './pages/EditBooking';
 import Navbar from './components/Navbar';
 import { Login } from './pages/Login';
