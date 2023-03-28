@@ -10,12 +10,12 @@ const addCarSchema = new Schema({
     perkm: Number,
     image: String,
     availablefrom:Date,
-    availabletill:Date,
+    availabletill:Date, 
     description:  String,
     cardetails:  String,
     details:  String,
 })
 
 
-module.exports =mongoose.model("addCar",addCarSchema); 
+module.exports =mongoose.model("addCar",addCarSchema);  
 

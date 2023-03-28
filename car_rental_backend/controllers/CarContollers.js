@@ -22,7 +22,17 @@ const createNewBooking = async (req, res) => {
        res.status(400).json({error : error.message})
     }
 }
-
+const createNewCarDetail = async (req, res) => {
+    const {img,seater,name,rateperkm,available_Date,Book,fare} = req.body
+    try{
+    
+       const newCar = await Car.create({img,seater,name,rateperkm,available_Date,Book,fare}) 
+       res.status(200).json(newCar) 
+    }
+    catch(error){
+       res.status(400).json({error : error.message})
+    }
+}
 
 
 const CreateAddCar =async (req,res)=>{
@@ -54,6 +64,6 @@ const CreateAddCar =async (req,res)=>{
 
 
 module.exports = {
-    getALLCarDetails,createNewBooking,CreateAddCar
+    getALLCarDetails,createNewBooking,CreateAddCar,createNewCarDetail 
 }
 
