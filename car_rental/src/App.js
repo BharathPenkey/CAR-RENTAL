@@ -13,7 +13,7 @@ import Navbar from './components/Navbar';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
 import { AdminLogin } from './pages/AdminLogin';
-
+import EditCar from './pages/EditCar';
 
 
 function App() {
@@ -21,15 +21,15 @@ function App() {
     <div className='App'>
 
       <BrowserRouter>
-      <Routes>
-         <Route path="/admin" element={<Admin/>}/>
-         <Route path="/addcar" element={<AddCars/>}/>
-           <Route path='/carbooking' element={<CarBooking/>}/>
-           <Route path='/quote' element={<Quote/>}/>
-            <Route path="/BookingDetails" element={<BookingDetails/>}/>
-         
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/addcar" element={<AddCars />} />
+          <Route path='/carbooking' element={<CarBooking />} />
+          <Route path='/quote' element={<Quote />} />
+          <Route path="/BookingDetails" element={<BookingDetails />} />
+          <Route path="/editcardetails" element={<EditCar />} />
+        </Routes>
+
       </BrowserRouter>
 
     </div>

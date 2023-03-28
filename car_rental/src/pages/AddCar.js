@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../styles/AddCar.css";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import AdminNav from "../components/AdminNav";
 
 function AddCars() {
     const [image, setImage] = useState();
@@ -32,7 +33,7 @@ function AddCars() {
         data.append("file", image);
         data.append("upload_preset", "cardata");
         data.append("cloud_name", "drfg4tq7u");
-        fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload", 
+        fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload",
             {
                 method: "post",
                 body: data
@@ -68,10 +69,8 @@ function AddCars() {
 
 
     return (<>
-
-        <h3>header</h3>
-        <br>
-        </br>
+        <AdminNav />
+        <br/>
         <h3 >ADD CAR DETAILS</h3>
         <div className="dividor">
             <div className="sec1">
@@ -146,6 +145,7 @@ function AddCars() {
                         ></input>
 
                     </div>
+
                 </div>
                 <div className="dev4">
                     <div className="CN">
