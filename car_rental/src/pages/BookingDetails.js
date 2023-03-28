@@ -85,7 +85,7 @@ const BookingDetails = () => {
 
         {/* <hr /> */}
 
-        <button className='cancel-btn'> Cancel </button>
+        <Link to='/carbooking'><button className='cancel-btn'> Cancel </button></Link>
 
         <section>
 

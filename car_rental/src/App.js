@@ -28,12 +28,13 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/adminLogin' element={<AdminLogin/>}/>
           <Route path="/admin" element={<Admin />} />
-          <Route path="/addcar" element={<AddCars />} />
+          <Route path='/mybooking' element={<MyBooking/>}/>
           <Route path='/carbooking' element={<CarBooking />} />
           <Route path='/quote' element={<Quote />} />
           <Route path="/BookingDetails" element={<BookingDetails />} />
           <Route path="/editcar" element={<EditCar />} />
           <Route path='/editBooking' element={<EditBooking/>}/>
+          <Route path="/addcar" element={<AddCars />} />
         </Routes>
         </div>
 
