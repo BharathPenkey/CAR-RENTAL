@@ -27,7 +27,7 @@ export const useLogin = () => {
             //save the user in localstorage
             localStorage.setItem('user', JSON.stringify(json))
             
-            navigate('/carbooking')
+            navigate('/quote')
 
             
             //update the auth context

@@ -1,19 +1,31 @@
 import React from 'react';
-import data from '../data/data';
+import { useEffect } from 'react';
 import '../styles/CarBooking.css'
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useCarContext } from '../hooks/useCarContext';
 
 
 const CarBooking = () => {
+
+    const {cars, dispatch} = useCarContext()
+    useEffect(() => {
+       const fetchcars = async () => {
+           const response = await fetch('/carRental/car/carDetails')
+           const json = await response.json()
+           if(response.ok){
+             dispatch({type : 'SET_CAR', payload : json})
+           }
+       }
+       fetchcars()
+     
+    }, [dispatch])
     return (
-        <div>
+        <div className='main-container'>
             {/* <Header /> */}
             {/* <hr /> */}
-            <span> Origin namee &gt; Destination namee &gt; 12 june-2019  -  13-june-2019
-                <Link to="/Quote"><button className='modify-btn'>Modify</button></Link>
-            </span>
-            {/* <hr /> */}
+            <h5> Origin namee &gt; Destination namee &gt; 12 june-2019  -  13-june-2019 <button className='modify-btn'><span>Modify</span></button> </h5>
+
 
             <section className='thirdNavbar'>
 
@@ -32,24 +44,23 @@ const CarBooking = () => {
                     </option>
                 </select>
 
-
+               
                 <button className='btns'>Setting</button>
                 <button className='btns'>Milage</button>
                 <button className='btns'>Other</button>
-
+                
 
             </section>
-            <hr />
+            
 
 
+            <section style={{ width: "100%" }} className='big-container'>
 
-            <section style={{ width: "100%" }}>
-
-                {
-                    data.map((item, index) => {
-                       
+                {  cars &&
+                    cars.map((item) => {
+                        // <Cards item={item} />
                         return (
-                            <div key={index} className='cards'>
+                            <div key={item._id} className='cards'>
 
                                 <div className='image_box'>
                                     <img src={item.img} alt={item.name} />
@@ -65,8 +76,10 @@ const CarBooking = () => {
                                 <div className='fare-btn'>
                                     <p className='fare'>{item['fare']}</p>
 
-
-                                    <Link to='/BookingDetails'><button className='btn'>{item.Book}</button></Link>
+                                    <button className='btn'>{item.Book}
+                                       
+                                       
+                                    </button>
                                 </div>
 
                             </div>

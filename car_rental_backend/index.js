@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGO_URI)
     console.log(error)
 })
 
-app.use('./carRental/car',carRouter)
+app.use('/carRental/car',carRouter)
 app.use('/carRental/admin' ,adminRouter)
 app.use('/carRental/user' ,userRouter)
 

@@ -22,7 +22,7 @@ export default function Navbar() {
                       {user && (
                         <>
                         <div className='carBooking'>
-                        <Link to='/CarBooking'>My bookings</Link>
+                        <Link to='/BookingDetails'>My bookings</Link>
                         </div>
                         <div>
                         <button onClick={handlelogout}>Log out</button>

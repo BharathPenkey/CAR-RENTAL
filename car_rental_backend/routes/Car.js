@@ -1,13 +1,12 @@
 const express = require('express')
-const {createNewBooking, getALLCarDetails}= require('../controllers/CarContollers')
-
-
+const {getALLCarDetails,createNewCarDetail}= require('../controllers/CarControllers')
 
 const router = express.Router();
 
 router.get('/carDetails', getALLCarDetails);
 
-router.post('/newBooking', createNewBooking)
+router.post('/newBooking', createNewCarDetail)
+
 
 
 module.exports = router
