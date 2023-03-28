@@ -26,18 +26,18 @@ const MyBooking = () => {
 
             <div className='mini-3rd-div'>
 
-              <div>
+              <div className='paratag'>
                 <p>Origin </p>
                 <p>Destination </p>
                 <p>Start Date </p>
                 <p>End Date </p>
               </div>
 
-              <div>
-                <p>:  Banglore</p>
-                <p>:  Mysore</p>
-                <p>:  16-June-2019</p>
-                <p>:  17-June-2019</p>
+              <div className='date'>
+                <p>:  Delhi</p>
+                <p>:  Up</p>
+                <p>:  16/5/19</p>
+                <p>:  17/5/19</p>
               </div>
 
               <div className='mini-3rd-div-img'>
@@ -99,18 +99,18 @@ const MyBooking = () => {
 
             <div className='mini-3rd-div'>
 
-            <div>
+            <div className='paratag'>
                 <p>Origin </p>
                 <p>Destination </p>
                 <p>Start Date </p>
                 <p>End Date </p>
               </div>
 
-              <div>
-                <p>:  Banglore</p>
-                <p>:  Mysore</p>
-                <p>:  16-June-2019</p>
-                <p>:  17-June-2019</p>
+              <div className='date'>
+                <p>:  Delhi</p>
+                <p>:  Up</p>
+                <p>:  16/5/19</p>
+                <p>:  17/5/19</p>
               </div>
 
               <div className='mini-3rd-div-img'>
@@ -171,18 +171,18 @@ const MyBooking = () => {
 
             <div className='mini-3rd-div'>
 
-            <div>
+            <div className='paratag'>
                 <p>Origin </p>
                 <p>Destination </p>
                 <p>Start Date </p>
                 <p>End Date </p>
               </div>
 
-              <div>
-                <p>:  Banglore</p>
-                <p>:  Mysore</p>
-                <p>:  16-June-2019</p>
-                <p>:  17-June-2019</p>
+              <div className='date'>
+                <p>:  Delhi</p>
+                <p>:  Up</p>
+                <p>:  16/5/19</p>
+                <p>:  17/5/19</p>
               </div>
 
               <div className='mini-3rd-div-img'>

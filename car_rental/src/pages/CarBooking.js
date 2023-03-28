@@ -4,6 +4,7 @@ import '../styles/CarBooking.css'
 
 // import { Link } from 'react-router-dom';
 import { useCarContext } from '../hooks/useCarContext';
+import { Link } from 'react-router-dom';
 
 
 const CarBooking = () => {
@@ -24,7 +25,7 @@ const CarBooking = () => {
         <div className='main-container'>
             {/* <Header /> */}
             {/* <hr /> */}
-            <h5> Origin namee &gt; Destination namee &gt; 12 june-2019  -  13-june-2019 <button className='modify-btn'><span>Modify</span></button> </h5>
+            <p> Origin namee &gt; Destination namee &gt; 12 june-2019  -  13-june-2019 <Link to='/quote'><button className='modify-btn'>Modify</button></Link> </p>
 
 
             <section className='thirdNavbar'>
@@ -76,10 +77,7 @@ const CarBooking = () => {
                                 <div className='fare-btn'>
                                     <p className='fare'>{item['fare']}</p>
 
-                                    <button className='btn'>{item.Book}
-                                       
-                                       
-                                    </button>
+                                    <Link to='/BookingDetails'><button className='btn'>{item.Book}</button></Link>
                                 </div>
 
                             </div>
