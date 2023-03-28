@@ -1,6 +1,6 @@
 .booking-box{
     width: 1350px;
-    height: 600px;
+    height: 6050px;
     border: 1px solid gray;
     background-color: white;
     /* overflow-y: hidden; */
@@ -10,7 +10,7 @@
 
 .left-box{
     width: 900px;
-    height: 600px;
+    height: 650px;
     border: 1px solid gray;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@
 }
 
 .cancel-btn{
-    padding: 8px 30px;
+    padding: 8px 20px;
     border: none;
     outline: none;
     color: white;
@@ -63,13 +63,13 @@
     border-radius: 30px;
     margin-left: 10px;
     cursor: pointer;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 
 }
 
 .right-box{
     width: 450px;
-    height: 600px;
+    height: 650px;
     border: 1px solid gray;
     display: flex;
     flex-direction: column;

@@ -15,8 +15,8 @@ const MyBooking = () => {
           </div>
 
           <div className='two-div'>
-            <h2>Toyota Innova</h2>
-            <h5> KA 37 BB 9999</h5>
+            <h3>Toyota Innova</h3>
+            <h6> KA 37 BB 9999</h6>
             <p>car details</p>
             <p>car details</p>
 
@@ -27,17 +27,17 @@ const MyBooking = () => {
             <div className='mini-3rd-div'>
 
               <div>
-                <p>Origin :</p>
-                <p>Destination :</p>
-                <p>Start Date :</p>
-                <p>End Date :</p>
+                <p>Origin </p>
+                <p>Destination </p>
+                <p>Start Date </p>
+                <p>End Date </p>
               </div>
 
               <div>
-                <p>Banglore</p>
-                <p>Mysore</p>
-                <p>16-June-2019</p>
-                <p>17-June-2019</p>
+                <p>:  Banglore</p>
+                <p>:  Mysore</p>
+                <p>:  16-June-2019</p>
+                <p>:  17-June-2019</p>
               </div>
 
               <div className='mini-3rd-div-img'>
@@ -68,11 +68,13 @@ const MyBooking = () => {
           </div>
 
           <div className='five-div'>
-          <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
-
-            <button className='can-btn'>Cancel</button>
-
+            <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
           </div>
+
+          <div className='six-div'>
+            <button className='can-btn'>Cancel</button>
+          </div>
+
 
 
         </div>
@@ -86,8 +88,8 @@ const MyBooking = () => {
           </div>
 
           <div className='two-div'>
-            <h2>Toyota Innova</h2>
-            <h5> KA 37 BB 9999</h5>
+            <h3>Toyota Innova</h3>
+            <h6> KA 37 BB 9999</h6>
             <p>car details</p>
             <p>car details</p>
 
@@ -97,18 +99,18 @@ const MyBooking = () => {
 
             <div className='mini-3rd-div'>
 
-              <div>
-                <p>Origin :</p>
-                <p>Destination :</p>
-                <p>Start Date :</p>
-                <p>End Date :</p>
+            <div>
+                <p>Origin </p>
+                <p>Destination </p>
+                <p>Start Date </p>
+                <p>End Date </p>
               </div>
 
               <div>
-                <p>Banglore</p>
-                <p>Mysore</p>
-                <p>16-June-2019</p>
-                <p>17-June-2019</p>
+                <p>:  Banglore</p>
+                <p>:  Mysore</p>
+                <p>:  16-June-2019</p>
+                <p>:  17-June-2019</p>
               </div>
 
               <div className='mini-3rd-div-img'>
@@ -141,8 +143,10 @@ const MyBooking = () => {
           <div className='five-div'>
             <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
 
-            <button className='can-btn'>Cancel</button>
+          </div>
 
+          <div className='six-div'>
+            <button className='can-btn'>Cancel</button>
           </div>
 
         </div>
@@ -156,8 +160,8 @@ const MyBooking = () => {
           </div>
 
           <div className='two-div'>
-            <h2>Toyota Innova</h2>
-            <h5> KA 37 BB 9999</h5>
+            <h3>Toyota Innova</h3>
+            <h6> KA 37 BB 9999</h6>
             <p>car details</p>
             <p>car details</p>
 
@@ -167,18 +171,18 @@ const MyBooking = () => {
 
             <div className='mini-3rd-div'>
 
-              <div>
-                <p>Origin :</p>
-                <p>Destination :</p>
-                <p>Start Date :</p>
-                <p>End Date :</p>
+            <div>
+                <p>Origin </p>
+                <p>Destination </p>
+                <p>Start Date </p>
+                <p>End Date </p>
               </div>
 
               <div>
-                <p>Banglore</p>
-                <p>Mysore</p>
-                <p>16-June-2019</p>
-                <p>17-June-2019</p>
+                <p>:  Banglore</p>
+                <p>:  Mysore</p>
+                <p>:  16-June-2019</p>
+                <p>:  17-June-2019</p>
               </div>
 
               <div className='mini-3rd-div-img'>
@@ -209,9 +213,11 @@ const MyBooking = () => {
           </div>
 
           <div className='five-div'>
-          <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
-            <button className='can-btn'>Cancel</button>
+            <Link to="/editbooking"><button className='edit-btn'>Edit</button></Link>
+          </div>
 
+          <div className='six-div'>
+            <button className='can-btn'>Cancel</button>
           </div>
 
         </div>

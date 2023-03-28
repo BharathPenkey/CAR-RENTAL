@@ -16,7 +16,7 @@ const EditBooking = () => {
         </div>
 
         <div>
-          <div className='mid-div'>
+          <div className='top-div'>
 
             <div>
               <p>Car Name</p>
@@ -58,7 +58,7 @@ const EditBooking = () => {
             </div>
 
             <div className='mini-3rd-div-img'>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28788.78777019961!2d85.16637504100797!3d25.58502223107953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5f5876b1ada3%3A0xc899c99a139e72e8!2sMahindra%20Kiran%20Automobiles!5e0!3m2!1sen!2sin!4v1679926472552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3618.3280597402077!2d84.04830495125768!3d24.92089173394706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x398db10689c9b687%3A0x451f59283c560da1!2sMahindra%20Bombay%20Automobiles!3m2!1d24.9195!2d84.0546!4m5!1s0x398db1cb49448895%3A0x3ba298dc09aa0d8e!2sKaimur%20Wildlife%20Sanctuary%20Gate%2C%20W29W%2BJJ2%2C%20Sikaria%2C%20Bihar%20821115!3m2!1d24.9198187!2d84.0463017!5e0!3m2!1sen!2sin!4v1679992531424!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
           </div>
@@ -83,7 +83,7 @@ const EditBooking = () => {
 
         </div>
 
-        <hr />
+        {/* <hr /> */}
 
         <button className='cancel-btn'> Cancel </button>
 

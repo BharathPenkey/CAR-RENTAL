@@ -49,7 +49,7 @@ function AddCars() {
     };
     const Submitdata = () => {
         axios
-            .post("http://localhost:5000/newcar", (formdata))
+            .post("http://localhost:4000/newcar", (formdata))
             .then((resp) => {
                 resp.json();
             })
