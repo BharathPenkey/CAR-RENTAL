@@ -6,7 +6,7 @@ import "../styles/Admin.css"
 import { Link } from 'react-router-dom';
 
  
-const Admin = () => {
+const Admin = () => { 
     return (
         <>
         <div classname="header">
