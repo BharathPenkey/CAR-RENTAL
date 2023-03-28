@@ -85,7 +85,7 @@ const EditBooking = () => {
 
         {/* <hr /> */}
 
-        <button className='cancel-btn'> Cancel </button>
+        <Link to='/carbooking'><button className='cancel-btn'> Cancel </button></Link>
 
         
       </section>
@@ -124,7 +124,7 @@ const EditBooking = () => {
           <input type="checkbox">It is a long established fact</input>
           </label> */}
 
-          <Link to="/admin">
+          <Link to="/mybooking">
             <button className='proceed-btn'>Proceed</button>
           </Link>
 

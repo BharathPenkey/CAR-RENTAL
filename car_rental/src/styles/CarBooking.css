@@ -16,6 +16,7 @@ h5{
     background-color: rgb(62, 137, 137);
     border-radius: 30px;
     margin-left: 30px;
+    cursor: pointer;
 
 }
 .big-container{
@@ -36,6 +37,7 @@ h5{
     width: 100px;
     height: 40px;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 
