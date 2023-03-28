@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
 
-export default function Navbar() {
+export default function AdminNav() {
   const {logout} = useLogout()
   const {user} = useAuthContext()
 
@@ -21,9 +21,6 @@ export default function Navbar() {
                       
                       {user && (
                         <>
-                        <div className='carBooking'>
-                        <Link to='/BookingDetails'>My bookings</Link>
-                        </div>
                         <div>
                         <button onClick={handlelogout}>Log out</button>
                         </div>

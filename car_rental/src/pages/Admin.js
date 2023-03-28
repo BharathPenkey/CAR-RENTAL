@@ -1,6 +1,7 @@
 import React from 'react';
 import data from '../data/data';
 import "../styles/Admin.css"
+ 
 
 import { Link } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ const Admin = () => {
     return (
         <>
         <div classname="header">
-               
+            
         </div>
         <div>
             <h3><b>welcome admin</b></h3>
@@ -54,3 +55,4 @@ const Admin = () => {
     )
 }
 export default Admin;
+

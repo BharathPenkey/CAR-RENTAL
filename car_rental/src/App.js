@@ -12,9 +12,8 @@ import EditBooking from './pages/EditBooking';
 import Navbar from './components/Navbar';
 import { Login } from './pages/Login';
 import { Signup } from './pages/Signup';
-
 import { AdminLogin } from './pages/AdminLogin';
-
+import EditCar from './pages/EditCar';
 
 
 function App() {
@@ -22,23 +21,22 @@ function App() {
     <div className='App'>
 
       <BrowserRouter>
-        <Navbar />
-
-        <div className="pages">
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/adminLogin' element={<AdminLogin />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/addcar" element={<AddCars />} />
-            <Route path='/carbooking' element={<CarBooking />} />
-            <Route path='/quote' element={<Quote />} />
-            <Route path="/BookingDetails" element={<BookingDetails />} />
-            <Route path='/editbooking' element={<EditBooking />}></Route>
-            <Route path='/mybooking' element={<MyBooking />}></Route>
-
-          </Routes>
+      <Navbar/>
+        <div className='pages'>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/adminLogin' element={<AdminLogin/>}/>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/addcar" element={<AddCars />} />
+          <Route path='/carbooking' element={<CarBooking />} />
+          <Route path='/quote' element={<Quote />} />
+          <Route path="/BookingDetails" element={<BookingDetails />} />
+          <Route path="/editcardetails" element={<EditCar />} />
+          <Route path='/editBooking' element={<EditBooking/>}/>
+        </Routes>
         </div>
+
       </BrowserRouter>
 
     </div>

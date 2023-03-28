@@ -16,7 +16,7 @@ const EditBooking = () => {
         </div>
 
         <div>
-          <div className='mid-div'>
+          <div className='top-div'>
 
             <div>
               <p>Car Name</p>
