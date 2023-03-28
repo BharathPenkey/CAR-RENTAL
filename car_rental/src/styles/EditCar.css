@@ -191,11 +191,9 @@
     /* border-radius:10px; */
     width: 90%;
 }
-.c-btn{
-    margin-left: 0px;
-}
+
 #cancel {
-    border: 2.5px solid skyblue;
+    border: 1px solid skyblue;
     padding: 0.5rem;
     text-align: center;
     border-radius: 1.2rem;
@@ -275,15 +273,34 @@
     width: 90%;
     font-size: large;
 }
+/* .btns{
+    margin-top:1.5rem;
+    display:flex;
+    justify-content:right;
+} */
 
-.add {
-    border: 2.5px solid skyblue;
+.Delete {
+    border: 1px solid skyblue;
+    background-color: red;
     padding: 0.5rem;
     text-align: center;
     border-radius: 1.2rem;
     margin-left: 30%;
     width: 23%;
-    color: skyblue;
+    color:white;
+    font-size: medium;
+    box-sizing: border-box;
+    margin-top: 4.3rem;
+}
+.Save{
+    border: 1px solid skyblue;
+    background-color: blue;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 1.2rem;
+    margin-left: 30%;
+    width: 23%;
+    color: white;
     font-size: medium;
     box-sizing: border-box;
     margin-top: 4.3rem;
