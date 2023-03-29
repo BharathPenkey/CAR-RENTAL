@@ -11,6 +11,10 @@ const carSchema = new Schema({
         type : Number,
         required : true
      },
+     carType : {
+      type : String,
+      required : true
+     },
      name : {
         type : String,
         required : true
