@@ -10,6 +10,4 @@ router.post('/newBooking', createNewCarDetail)
 
 router.post('/addcar',CreateAddCar)
 
-
-
 module.exports = router;

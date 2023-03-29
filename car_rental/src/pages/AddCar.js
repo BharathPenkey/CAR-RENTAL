@@ -1,15 +1,14 @@
 
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import "../styles/AddCar.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
-// import AdminNav from "../components/AdminNav";
+import { Link, useNavigate } from 'react-router-dom';
+import AdminNav from "../components/AdminNav";
 
 function AddCars() {
+    const navigate = useNavigate()
     const [image, setImage] = useState();
     const [url, setUrl] = useState("");
-    // navigate=useNavigate()
     const [formdata, setFormdata] = useState({
         carname: "",
         type: "",
@@ -31,6 +30,7 @@ function AddCars() {
         });
     };
     const HandleImage = () => {
+        
         const data = new FormData();
         data.append("file", image);
         data.append("upload_preset", "cardata");
@@ -49,28 +49,31 @@ function AddCars() {
                 console.log(err)
             });
     };
-    const Submitdata = () => {
-        axios.post("http://localhost:5000/carRental/car/addcar", (formdata))
-            .then((resp) => {
-                resp.json();
-            })
-            .then((data) => {
-                setUrl(data.url);
-                setFormdata({
-                    ...formdata,
-                    image: data.url
-                });
-            })
-            .catch((err) => {
-                 console.log(err);
-            });
-        console.log(formdata);
-        console.log(url)
+    const Submitdata = (e) => {
+        e.preventDefault()
+        navigate('/editCar')
+        // axios
+        //     .post("http://localhost:5000/newBooking", (formdata))
+        //     .then((resp) => {
+        //         resp.json();
+        //     })
+        //     .then((data) => {
+        //         setUrl(data.url);
+        //         setFormdata({
+        //             ...formdata,
+        //             image: data.url
+        //         });
+        //     })
+        //     .catch((err) => {
+        //         console.log(err);
+        //     });
+        // console.log(formdata);
+        // console.log(url)
     };
 
 
     return (<>
-        
+        <AdminNav />
         <br/>
         <h3 >ADD CAR DETAILS</h3>
         <div className="dividor">
@@ -156,10 +159,9 @@ function AddCars() {
                             onChange={HandleChange}
                         ></textarea>
 
-                    </div>  
-                </div >
-                <div className="c-btn"><Link to="/admin"><button id="cancel" >Cancel</button></Link></div>
-                
+                    </div>
+                </div>
+                <Link to="/admin"><button id="cancel" >Cancel</button></Link>
             </div>
             <div className="sec2">
                 <div className="dev">
@@ -173,6 +175,7 @@ function AddCars() {
                         }}></input>
                 </div>
 
+
                 <div className="dev5">
                     <label for="cd">Car details </label>
                     <textarea id="cd" rows="4" colums="100"
@@ -184,8 +187,8 @@ function AddCars() {
                         name="details"
                         onChange={HandleChange}></textarea>
                 </div>
-                <div><Link to="/admin"><button className="add"
-                    onClick={Submitdata}>Add </button></Link></div>
+                <div><button className="add"
+                    onClick={Submitdata}>Add </button></div>
             </div>
         </div>
     </>
