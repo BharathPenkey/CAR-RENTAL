@@ -191,11 +191,9 @@
     /* border-radius:10px; */
     width: 90%;
 }
-.c-btn{
-    margin-left: 0px;
-}
+
 #cancel {
-    border: 2.5px solid skyblue;
+    border: 1px solid skyblue;
     padding: 0.5rem;
     text-align: center;
     border-radius: 1.2rem;
@@ -214,9 +212,9 @@
     border: 0.8px solid whitesmoke;
 }
 
-.sec2 .dev {  
+.sec2 .dev {
     margin-top: 1rem;
-} 
+}
 
 /* images */
 .dev #dev1 {
@@ -277,7 +275,7 @@
 }
 
 .add {
-    border: 2.5px solid skyblue;
+    border: 1px solid skyblue;
     padding: 0.5rem;
     text-align: center;
     border-radius: 1.2rem;

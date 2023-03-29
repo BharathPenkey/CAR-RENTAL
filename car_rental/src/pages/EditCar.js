@@ -1,3 +1,23 @@
+// import React from 'react'
+
+// const EditCar = () => {
+//   return (
+//     <div>EditCar</div>
+//   )
+// }
+
+// export default EditCar
+
+// import React from 'react'
+
+// const EditCar = () => {
+//   return (
+//     <div>EditCar</div>
+//   )
+// }
+
+// export default EditCar
+
 
 import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
@@ -51,7 +71,7 @@ function EditCar() {
   };
   const Submitdata = () => {
     axios
-      .post("http://localhost:5000/newCarDetail", (formdata))
+      .put("http://localhost:5000/api/v1", (formdata))
       .then((resp) => {
         resp.json();
       })
