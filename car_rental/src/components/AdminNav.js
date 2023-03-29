@@ -14,9 +14,9 @@ export default function AdminNav() {
   return (
     <header>
       <div className='container'>
-        <Link to="/">
+       
           <h1>LOGO</h1>
-        </Link>
+        
         <nav>
 
           {user && (

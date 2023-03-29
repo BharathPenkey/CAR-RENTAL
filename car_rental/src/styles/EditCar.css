@@ -273,11 +273,11 @@
     width: 90%;
     font-size: large;
 }
-/* .btns{
-    margin-top:1.5rem;
-    display:flex;
-    justify-content:right;
-} */
+.btnss{
+    display: flex;
+    /* justify-content: space-between; */
+    margin-right: 40px;
+}
 
 .Delete {
     border: 1px solid skyblue;
@@ -285,8 +285,8 @@
     padding: 0.5rem; 
     text-align: center; 
     border-radius: 1.2rem; 
-    margin-left: 30%;
-    width: 23%;
+    /* margin-left: 30%; */
+  
     color:white;
     font-size: medium;
     box-sizing: border-box;
@@ -298,8 +298,8 @@
     padding: 0.5rem;
     text-align: center;
     border-radius: 1.2rem;
-    margin-left: 30%;
-    width: 23%;
+    /* margin-left: 40%; */
+
     color: white;
     font-size: medium;
     box-sizing: border-box;

@@ -11,9 +11,9 @@ root.render(
   <React.StrictMode>
     <CarContextProvider>
       <AuthContextProvider>
-        <App/>
+        <App />
       </AuthContextProvider>
-    </CarContextProvider>
+      </CarContextProvider>
   </React.StrictMode>
 );
 

@@ -1,13 +1,15 @@
 
 import React, { useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import "../styles/EditCar.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
-import AdminNav from "../components/AdminNav";
+
+// import AdminNav from "../components/AdminNav";
 
 function EditCar() {
   const [image, setImage] = useState();
   const [url, setUrl] = useState("");
+  const navigate = useNavigate();
   const [formdata, setFormdata] = useState({
     carname: "",
     type: "",
@@ -65,11 +67,12 @@ function EditCar() {
       });
     console.log(formdata);
     console.log(url)
+    navigate('/admin')
   };
 
 
   return (<>
-    <AdminNav />
+    {/* <AdminNav /> */}
     <br />
     <h3 >EDIT CAR DETAILS</h3>
     <div className="dividor">
@@ -184,7 +187,7 @@ function EditCar() {
             name="details"
             onChange={HandleChange}></textarea>
         </div>
-        <div className="btns">
+        <div className="btnss">
           <div>
             <Link to="/admin"><button className="Delete"
             onClick={Submitdata}>Delete </button>
@@ -193,7 +196,7 @@ function EditCar() {
           <div>
             <Link to="/admin"><button className="Save"
             onClick={Submitdata}>Save </button>
-          </Link>
+             </Link>
           </div>
           
         </div>
