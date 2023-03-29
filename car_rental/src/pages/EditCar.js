@@ -200,7 +200,7 @@ function EditCar() {
           </div>
           
         </div>
-      </div>
+      </div> 
     </div>
   </>
 

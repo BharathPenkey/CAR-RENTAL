@@ -62,7 +62,7 @@ function AddCars() {
                 });
             })
             .catch((err) => {
-                console.log(err);
+                 console.log(err);
             });
         console.log(formdata);
         console.log(url)
