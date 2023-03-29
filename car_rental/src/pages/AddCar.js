@@ -1,13 +1,15 @@
 
 import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import "../styles/AddCar.css";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import AdminNav from "../components/AdminNav";
+// import AdminNav from "../components/AdminNav";
 
 function AddCars() {
     const [image, setImage] = useState();
     const [url, setUrl] = useState("");
+    // navigate=useNavigate()
     const [formdata, setFormdata] = useState({
         carname: "",
         type: "",
@@ -48,8 +50,7 @@ function AddCars() {
             });
     };
     const Submitdata = () => {
-        axios
-            .post("http://localhost:5000/newCarDetail", (formdata))
+        axios.post("http://localhost:5000/carRental/car/addcar", (formdata))
             .then((resp) => {
                 resp.json();
             })
@@ -61,7 +62,7 @@ function AddCars() {
                 });
             })
             .catch((err) => {
-                console.log(err);
+                 console.log(err);
             });
         console.log(formdata);
         console.log(url)
@@ -69,7 +70,7 @@ function AddCars() {
 
 
     return (<>
-        <AdminNav />
+        
         <br/>
         <h3 >ADD CAR DETAILS</h3>
         <div className="dividor">
@@ -171,7 +172,6 @@ function AddCars() {
                             setImage(e.target.files[0])
                         }}></input>
                 </div>
-
 
                 <div className="dev5">
                     <label for="cd">Car details </label>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const EditBooking = () => {
   return (
 
-
+  
     <div className='booking-box'>
 
       <section className='left-box'>
