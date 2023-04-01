@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import "../styles/AddCar.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
-import AdminNav from "../components/AdminNav";
+import { Link ,useNavigate} from 'react-router-dom';
+// import AdminNav from "../components/AdminNav";
 
-function AddCars() {
+function AddCar() { 
+    const navigate=useNavigate()
     const [image, setImage] = useState();
     const [url, setUrl] = useState("");
     const [formdata, setFormdata] = useState({
@@ -50,8 +51,7 @@ function AddCars() {
             });
     };
     const Submitdata = () => {
-        axios
-            .post("http://localhost:5000/carRental/car/addcar", (formdata))
+        axios.post("http://localhost:5000/carRental/car/addcar", (formdata))
             .then((resp) => {
                 resp.json();
             })
@@ -61,6 +61,7 @@ function AddCars() {
                     ...formdata,
                     image: data.url
                 });
+                navigate("/admin")
             })
             .catch((err) => {
                 console.log(err);
@@ -198,7 +199,7 @@ function AddCars() {
 }
 
 
-export default AddCars;
+export default AddCar;
 
 
 

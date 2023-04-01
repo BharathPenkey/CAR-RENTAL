@@ -26,7 +26,7 @@ import axios from "axios";
 
 // import AdminNav from "../components/AdminNav";
 
-function EditCar() {
+function EditCar(singlecar) {
   const [image, setImage] = useState();
   const [url, setUrl] = useState("");
   const navigate = useNavigate();
@@ -55,23 +55,22 @@ function EditCar() {
     data.append("file", image);
     data.append("upload_preset", "cardata");
     data.append("cloud_name", "drfg4tq7u");
-    fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload",
-      {
+    fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload",{
         method: "post",
         body: data
       })
       .then(resp => resp.json())
-      .then((data) => setFormdata({
+      .then((data) => {setFormdata({
         ...formdata,
         image: data.url
-      }))
+      })
+    })
       .catch((err) => {
         console.log(err)
       });
   };
   const Submitdata = () => {
-    axios
-      .put("http://localhost:5000/api/v1", (formdata))
+    axios.put(`http://localhost:5000/api/v1 ${singlecar.singlecar._id}`, (formdata))
       .then((resp) => {
         resp.json();
       })
@@ -87,9 +86,32 @@ function EditCar() {
       });
     console.log(formdata);
     console.log(url)
-    navigate('/admin')
-  };
+    window.location.reload();
 
+    // navigate('/admin')
+  };
+ const Deletedata =()=> {
+  axios.delete(`${singlecar.singlecar._id}`, (formdata))
+  .then((resp) => {
+    resp.json();
+    
+  })
+  .then((data)=>{
+    setUrl(data.url);
+    setFormdata({
+      ...formdata,
+      image: data.url
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+console.log(formdata);
+console.log(url)
+window.location.reload();
+};
+
+ 
 
   return (<>
     {/* <AdminNav /> */}
@@ -100,9 +122,11 @@ function EditCar() {
         <div className="CN">
           <label >Car Name</label>
           <input type="text"
-            placeholder="Name"
             name="carname"
-            onChange={HandleChange} ></input>
+            onChange={HandleChange}
+
+            placeholder = {singlecar.singlecar.carname}
+             />
         </div>
         <div className="dev1">
           <div className="devv">
@@ -112,7 +136,8 @@ function EditCar() {
               name="type"
               className="inp-type"
               onChange={HandleChange}
-            />
+              placeholder={singlecar.singlecar.type}
+               />
           </div>
 
           <div className="dev">
@@ -122,6 +147,7 @@ function EditCar() {
               name="model"
               className="inp-model"
               onChange={HandleChange}
+              placeholder={singlecar.singlecar.model}
             />
           </div>
         </div>
@@ -134,6 +160,7 @@ function EditCar() {
               name="milage"
               className="inp-milage"
               onChange={HandleChange}
+              placeholder={singlecar.singlecar.milage}
             />
           </div>
 
@@ -141,9 +168,9 @@ function EditCar() {
             <label for="perkm">perKM </label>
             <input type="number"
               id="perkm"
-              placeholder="0000"
               name="perkm"
               onChange={HandleChange}
+              placeholder={singlecar.singlecar.perkm}
             ></input>
 
           </div>
@@ -176,6 +203,7 @@ function EditCar() {
             <textarea id="cd" rows="4" colums="100"
               name="description"
               onChange={HandleChange}
+              placeholder={singlecar.singlecar.description}
             ></textarea>
 
           </div>
@@ -185,7 +213,8 @@ function EditCar() {
       </div>
       <div className="sec2">
         <div className="dev">
-          <div id="dev1"><label>Images </label><button className="addimg" onClick={HandleImage}>ADD</button></div>
+          <div id="dev1"><label>Images </label><button className="addimg" 
+          onClick={HandleImage}>ADD</button></div>
 
           <input type="file"
             name="image"
@@ -200,17 +229,18 @@ function EditCar() {
           <label for="cd">Car details </label>
           <textarea id="cd" rows="4" colums="100"
             name="cardetails"
-            onChange={HandleChange}></textarea>
+            onChange={HandleChange}
+            placeholder={singlecar.singlecar.cardetails}></textarea>
 
           <label for="details">Details </label>
           <textarea id="details" rows="4" colums="100"
             name="details"
-            onChange={HandleChange}></textarea>
+            onChange={HandleChange} placeholder={singlecar.singlecar.details}></textarea>
         </div>
         <div className="btnss">
           <div>
             <Link to="/admin"><button className="Delete"
-            onClick={Submitdata}>Delete </button>
+            onClick={Deletedata}>Delete </button>
           </Link>
           </div>
           <div>

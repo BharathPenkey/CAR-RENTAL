@@ -1,4 +1,4 @@
-const data = [
+const Data = [
   {
       "img": "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
       "seater": 6,
@@ -97,7 +97,7 @@ const data = [
     "available Date": "20-Mar-30-Mar",
     "Book": "Book now",
     "fare": "Fare details"
-  },
+  }, 
   {
     "img": "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
     "seater": 6,
@@ -108,4 +108,4 @@ const data = [
     "fare": "Fare details"
   }
 ]
-export default data;
+export default Data;

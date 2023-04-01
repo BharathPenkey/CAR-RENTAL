@@ -1,5 +1,5 @@
 const Car = require('../models/CarModel');
-const Addcar = require("../models/addCarModel");
+const addCar = require("../models/addCarModel");
 
 
 
@@ -7,6 +7,12 @@ const getALLCarDetails = async (req, res) => {
     const cars = await Car.find({}).sort({createdAt : -1})
     res.status(200).json(cars)
 }
+
+const AddCarData = async (req, res) => {
+    const Acd = await addcar.find({}).sort({createdAt : -1})
+    res.status(200).json(Acd)
+}
+  
 
 
 const createNewCarDetail = async (req, res) => {
@@ -26,7 +32,7 @@ const CreateAddCar =async (req,res)=>{
     console.log(req.body)
     const { carname,type,model,milage,perkm,availablefrom,availabletill,image,description,cardetails,details} = req.body
  try{
-    const newAddCar = await Addcar.create({
+    const newAddCar = await addCar.create({
         carname,
         type,
         model,
@@ -51,5 +57,5 @@ const CreateAddCar =async (req,res)=>{
 
 
 module.exports = {
-    getALLCarDetails,CreateAddCar,createNewCarDetail 
+    getALLCarDetails,CreateAddCar,createNewCarDetail,AddCarData
 }
