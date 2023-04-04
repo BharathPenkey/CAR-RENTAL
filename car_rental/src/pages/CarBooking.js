@@ -1,15 +1,34 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import '../styles/CarBooking.css'
+// import axios from 'axios'
 
 // import { Link } from 'react-router-dom';
 import { useCarContext } from '../hooks/useCarContext';
 import { Link } from 'react-router-dom';
 
 
-const CarBooking = () => {
+
+const CarBooking = () => { 
+    // const [data, setdata] = useState([])
+    // useEffect(() => {
+    //     Promise.all([
+    //         axios.get("http://localhost:5000/carRental/car/carDetails"),
+    //       axios.get("http://localhost:5000/carRental/car/getbookingdetails")
+         
+    //     ])
+    //       .then(([adminData, bookingData]) => {
+    //         setdata(adminData.data);
+    //         setdestination(bookingData.data.users[bookingData.data.users.length-1]);
+    //       })
+    //       .catch((error) => {
+    //         console.log(error);
+    //       });
+    //   }, []);
+    const [destination, setdestination] = useState([]);
     const [selectId, setSelectId] = useState([])
     const [type, setType] = useState([])
+
 
     const handleSelectChange = (e) => {
         e.preventDefault()
@@ -31,10 +50,13 @@ const CarBooking = () => {
     useEffect(() => {
        const fetchcars = async () => {
            const response = await fetch('/carRental/car/carDetails')
+           const destAndOrigin = await fetch('/carRental/car/getbookingdetails')
+           const json2 = await destAndOrigin.json()
            const json = await response.json()
            if(response.ok){
              dispatch({type : 'SET_CAR', payload : json})
            }
+           setdestination(json2.users[json2.users.length-1]);
        }
        fetchcars()
      
@@ -46,7 +68,7 @@ const CarBooking = () => {
         <div className='main-container'>
             {/* <Header /> */}
             {/* <hr /> */}
-            <p> Origin namee &gt; Destination namee &gt; 12 june-2019  -  13-june-2019 <Link to='/quote'><button className='modify-btn'>Modify</button></Link> </p>
+            <p> {destination.origin} &gt; {destination.destination} &gt; {destination.startdate}  -  {destination.enddate} <Link to='/quote'><button className='modify-btn'>Modify</button></Link> </p>
 
 
             <section className='thirdNavbar'>
@@ -96,7 +118,7 @@ const CarBooking = () => {
                           return (Number(item.seater) === Number(selectId));
                           }
                           else{
-                            return item.seater === 4 || item.seater === 6 || item.seater === 8 
+                            return item.seater === 4 || item.seater === 6 || item.seater === 8 || item.seater === 3
                           }
                         
                     }) 

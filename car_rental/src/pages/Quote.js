@@ -1,8 +1,36 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Quote.css';
+// import { useCarContext } from '../hooks/useCarContext';
 
 const Quote = () => {
+    const navigate = useNavigate()
+    const [state, setState] = useState({
+        startdate :  '',
+        enddate : "",
+        origin : "",
+        destination : ""
+    })
+    const handleCheck =  async (e) =>{
+        e.preventDefault()
+        // const destAndOrigin = {...state}
+        const response = await fetch('/carRental/car/bookingdetails',{   // or yha post request se fetch krenge
+            method : "POST",
+            body : JSON.stringify(state),
+            headers : {
+             'Content-Type' : 'application/json'
+            }
+         }) 
+         const json = await response.json()
+         if(response.ok){
+            navigate('/CarBooking')
+            setState(json.users);
+   
+          
+         } 
+    }
+    
+   
     return (
         <>
             <div className='box' >
@@ -16,18 +44,29 @@ const Quote = () => {
 
                         <div className='input'>
                             <label>
-                                <input type="date" placeholder="startdate" />
+                                <input type="date" placeholder="startdate" onChange={(e) => setState({...state, startdate:e.target.value})}/>
                             </label>
                         </div>
 
                         <div className='input'>
                             <label>
-                                <input type="date" placeholder=" enddate" />
+                                <input type="date" placeholder=" enddate"  onChange={(e) => setState({...state, enddate:e.target.value})}/>
                             </label>
                         </div>
-                        <Link to="/CarBooking"><button className='check-btn'>
+                        <div className='input'>
+                            <label>
+                                <input type="text" placeholder="Mumbai"  onChange={(e) => setState({...state, origin:e.target.value})}/>
+                            </label>
+                        </div>
+                        <div className='input'>
+                            <label>
+                                <input type="text" placeholder="Delhi" onChange={(e) => setState({...state, destination:e.target.value})}/>
+                            </label>
+                        </div>
+
+                       <button className='check-btn' onClick={handleCheck}>
                             check
-                        </button></Link>
+                        </button>
 
 
 

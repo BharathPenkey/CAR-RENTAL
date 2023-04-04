@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../data/data';
 import "../styles/Admin.css"
+import axios from 'axios'
+import { useEffect } from 'react';
  
 
 import { Link } from 'react-router-dom';
 
 
 const Admin = () => {
+    const [data, setdata] = useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:5000/carRental/car/carDetails")
+        .then((resp)=>{
+          setdata(resp.data)
+          console.log(data)
+        })
+      },[data.length])
     return (
         <>
         <div classname="header">

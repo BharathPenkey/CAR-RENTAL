@@ -1,32 +1,24 @@
-const Car = require('../models/CarModel');
+// const Car = require('../models/CarModel');
 const Addcar = require("../models/addCarModel");
 
 
 
 const getALLCarDetails = async (req, res) => {
-    const cars = await Car.find({}).sort({createdAt : -1})
+    const cars = await Addcar.find({}).sort({createdAt : -1})
     res.status(200).json(cars)
 }
 
 
-const createNewCarDetail = async (req, res) => {
-    const {img,seater,carType,name,rateperkm,available_Date,Book,fare} = req.body
-    try{
     
-       const newCar = await Car.create({img,seater,carType,name,rateperkm,available_Date,Book,fare}) 
-       res.status(200).json(newCar) 
-    }
-    catch(error){
-       res.status(400).json({error : error.message})
-    }
-}
+  
+
 
 
 const CreateAddCar =async (req,res)=>{
     console.log(req.body)
     const { carname,type,model,milage,perkm,availablefrom,availabletill,image,description,cardetails,details} = req.body
- try{
-    const newAddCar = await Addcar.create({
+
+    const newAddCar = new Addcar({
         carname,
         type,
         model,
@@ -39,17 +31,33 @@ const CreateAddCar =async (req,res)=>{
         cardetails,
         details
     })
-    res.status(200).json(newAddCar) 
- }
- catch(error){
-    res.status(400).json({error : error.message})
- }
+        newAddCar.save()
+       .then(() => {
+        res.send({ message: "successful" });
+      })
+      .catch((err) => {
+        res.send({ message: err });
+        console.log(err);
+      });
+ 
     
+}
+const editAddedCar = async (req, res) => {
+    const {id} = req.params
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error : "No Such Id"})
+    }
+    const editedCar = await Addcar.findOneAndUpdate({_id : id}, {
+        ...req.body
+    })
+    if(!workout){
+        return res.status(404).json({error : "No such workout"})
+    }
+    res.status(200).json(editedCar)
 }
 
 
 
-
 module.exports = {
-    getALLCarDetails,CreateAddCar,createNewCarDetail 
+    getALLCarDetails,CreateAddCar,editAddedCar
 }
