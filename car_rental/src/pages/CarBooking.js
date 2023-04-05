@@ -26,6 +26,7 @@ const CarBooking = () => {
     //       });
     //   }, []);
     const [destination, setdestination] = useState([]);
+    // const dispatch = useCarContext()
     const [selectId, setSelectId] = useState([])
     const [type, setType] = useState([])
 

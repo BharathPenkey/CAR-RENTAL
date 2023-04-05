@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import "../styles/AddCar.css";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
-import AdminNav from "../components/AdminNav";
+import { Link ,useNavigate} from 'react-router-dom';
+// import AdminNav from "../components/AdminNav";
 
-function AddCars() {
-    const navigate = useNavigate()
+function AddCar() { 
+    const navigate=useNavigate()
     const [image, setImage] = useState();
     const [url, setUrl] = useState("");
     const [formdata, setFormdata] = useState({
@@ -15,7 +15,7 @@ function AddCars() {
         model: "",
         milage: "",
         perkm: "",
-        image: "",
+        image: '',
         availablefrom: "",
         availabletill: "",
         description: "",
@@ -30,51 +30,51 @@ function AddCars() {
         });
     };
     const HandleImage = () => {
-        
         const data = new FormData();
         data.append("file", image);
-        data.append("upload_preset", "cardata");
-        data.append("cloud_name", "drfg4tq7u");
-        fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload",
+        data.append("upload_preset", "carImage");
+        data.append("cloud_name", "dpndik2sj");
+        fetch("https://api.cloudinary.com/v1_1/dpndik2sj/image/upload",
             {
                 method: "post",
                 body: data
             })
-            .then(resp => resp.json())
-            .then((data) => setFormdata({
+            .then((res) => res.json())
+            .then((data) => {
+                setFormdata({
                 ...formdata,
                 image: data.url
-            }))
+                })
+                console.log(data.url)
+               
+            })
             .catch((err) => {
                 console.log(err)
             });
     };
-    const Submitdata = (e) => {
-        e.preventDefault()
-        navigate('/editCar')
-        // axios
-        //     .post("http://localhost:5000/newBooking", (formdata))
-        //     .then((resp) => {
-        //         resp.json();
-        //     })
-        //     .then((data) => {
-        //         setUrl(data.url);
-        //         setFormdata({
-        //             ...formdata,
-        //             image: data.url
-        //         });
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //     });
-        // console.log(formdata);
-        // console.log(url)
+    const Submitdata = () => {
+        axios.post("http://localhost:5000/carRental/car/addcar", (formdata))
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data)
+                console.log(formdata);
+                console.log(url)
+                setUrl(data.url);
+                setFormdata({
+                    ...formdata,
+                    image: data.url
+                });
+                navigate("/admin")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+       
     };
 
 
     return (<>
-        <AdminNav />
-        <br/>
+
         <h3 >ADD CAR DETAILS</h3>
         <div className="dividor">
             <div className="sec1">
@@ -132,21 +132,21 @@ function AddCars() {
 
                 <div className="dev3">
                     <div className="devv">
-                        <label for="doa">Available from </label>
-                        <input type="date"
-                            id="doa"
-                            name="availablefrom"
-
-                            onChange={HandleChange}
+                        <label>Available from </label>
+                        <label>
+                            <input type="date"
+                            onChange={(e) => setFormdata({...formdata, availablefrom: e.target.value})}
                         ></input>
+                        </label>
                     </div>
 
                     <div className="dev">
                         <label for="dt">Available till </label>
-                        <input type="date" id="dt"
-                            name="availabletill"
-                            onChange={HandleChange}
+                        <label>
+                            <input type="date"
+                            onChange={(e) => setFormdata({...formdata, availabletill: e.target.value})}
                         ></input>
+                        </label>
 
                     </div>
 
@@ -187,8 +187,12 @@ function AddCars() {
                         name="details"
                         onChange={HandleChange}></textarea>
                 </div>
-                <div><button className="add"
-                    onClick={Submitdata}>Add </button></div>
+                <div>
+                    <Link to="/admin"><button className="add"
+                    onClick={Submitdata}>Add </button></Link>
+                    
+                    
+                    </div>
             </div>
         </div>
     </>
@@ -197,4 +201,9 @@ function AddCars() {
 }
 
 
-export default AddCars;
+export default AddCar;
+
+
+
+
+
