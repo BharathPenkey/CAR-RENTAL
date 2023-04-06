@@ -1,51 +1,35 @@
 
 import React, { useEffect, useState } from 'react';
-import Data from '../Data/Data';
+import Data from '../data/data';
 import "../styles/Admin.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
-import EditCar from '../pages/EditCar'
-
+import EditCar from './EditCar'
 import { Link } from 'react-router-dom';
+import { useAdminCarContext } from '../hooks/useAdminCarContext';
 
-export function Main(main) {
-    return main
-}
+
+
 const Admin = () => {
-    const [carData, setCarData] = useState(false)
-    const [data, setdata] = useState([])
-    const [singlecar, setSinglecar] = useState({
-        carname: "", type: "", model: "", milage: "", perkm: "", description: "", cardetails: "", details: "", _id: ""
-    })
-
-    const navigate = useNavigate();
-    const EditCardetails = (ID) => {
-        const { carname, type, model, milage, perkm, description, cardetails, details, _id } = ID
-        setSinglecar({
-            carname: carname, type: type, model: milage, milage, perkm: perkm, description: description, cardetails: description, details: details, _id: _id
-        })
-        setCarData(true)
-    }
-
-
-    //     Main(ID)
-    //     // <Link to=`/editcar:${ID}`></Link>
-    //      navigate(`/editcar/:${ID}`)   
-    // }
+    const {cars, dispatch} = useAdminCarContext()
     useEffect(() => {
-        axios.get("http://localhost:5000/carRental/car/dataadded")
-            .then((res) => {
-                setdata(res.data)
-                console.log(data)
-            })
-        // .then(data =>setCarData(data))
-    }, [data.length])
+        const fetchcars = async () => {
+            const response = await fetch('/carRental/car/adminpageCars')
+            const json = await response.json()
+            if(response.ok){
+              dispatch({type : 'SET_ADMIN_CAR', payload : json})
+            }
+        
+        }
+        fetchcars()
+      
+     }, [dispatch])
+
+    const [data, setdata] = useState([])
+    const navigate = useNavigate();
+
     return (
-        <>
-            <div></div>
-            {
-                !carData &&
-                  
+        <>          
     <div> 
         <h3><b>welcome admin</b></h3>
 
@@ -56,58 +40,38 @@ const Admin = () => {
 
         <section style={{ width: "100vw" }}>
             {/* addding functionality to get images */}
-            {Data.map((item, index) => (
-                        <div key={index} className='cards'>
-
-                            <Link to="/editcar"><div className='image_box'>
-                                <img src={item.img} alt={item.name} navigate="/editcar"/>
-                            </div></Link>
-                            <p className='seat'>{item.seater} 6 Persons</p>
-
-                            <div className='details'>
-
-                                <h3>{item.name}</h3>
-                                <p className='rate'>{item.rateperkm}Rs/km</p>
-
-                            </div>
-                            <div>
-                                <p className='availableDate'>available date:{item['available Date']}</p>
-                            </div>
-
-                        </div>
-                    )
-                )}
-             { data.map((item, index) => (
+          
+             { cars && cars.map((item, index) => {
+                return(
                         <div key={index} className='cards'>
 
                             <div className='image_box'>
                             
-                                <img src={item.img} alt={item.name}
-                                onClick={()=>{EditCardetails(item)}}navigate="/editcar" />
+                                <img src={item.image} alt={item.name}
+                                navigate="/editcar" />
                             </div>
-                            <p className='seat'>6 Persons</p>
+                            <p className='seat'>{item.type} seater</p>
 
                             <div className='details'>
 
-                                <h3>{item.name}</h3>
-                                <p className='rate'>{item.rateperkm}Rs/km</p>
+                                <h3>{item.carname}</h3>
+                                <p className='rate'>{item.perkm}Rs/km</p>
 
                             </div>
                             <div>
-                                <p className='availableDate'>available date:{item.availablefrom}</p>
+                                <p className='availableDate'>available date:{item.availablefrom} to {item.availabletill}</p>
                             </div>
 
                         </div>
-                    )
-                ) }
+                )}
+             )
+                }
+                   
         </section>
     </div >
-}
-{
-    cardetails &&
-    <EditCar singlecar={singlecar}/>
-}
+
         </>
     )
 }
+
 export default Admin;
