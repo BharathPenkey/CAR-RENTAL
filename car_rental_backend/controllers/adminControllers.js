@@ -13,7 +13,7 @@ const createToken = (_id) => {
  const loginAdmin = async (req,res) => {
      const {email, password} = req.body
      try {
-         if(email ===  "admin@gmail.com" && password === 'abcABC!123'){
+         if(email && password){
             const user = await admin.login(email,password)
             //it will return that user from static login function
     

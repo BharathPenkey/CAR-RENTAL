@@ -51,7 +51,7 @@ const CreateAddCar =async (req,res)=>{
     })
         newAddCar.save()
        .then(() => {
-        res.send({ message: "successful" });
+        res.send(newAddCar);
       })
       .catch((err) => {
         res.send({ message: err });
@@ -61,23 +61,59 @@ const CreateAddCar =async (req,res)=>{
     
 }
 const editAddedCar = async (req, res) => {
-    const {id} = req.params
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error : "No Such Id"})
-    }
-    const editedCar = await Addcar.findOneAndUpdate({_id : id}, {
-        ...req.body
-    })
-    if(!workout){
-        return res.status(404).json({error : "No such car"})
-    }
-    res.status(200).json(editedCar)
+    try {
+        const carId = req.params.id;
+        const {
+          carname,
+          type,
+          model,
+          milage,
+          perkm,
+          availablefrom,
+          availabletill,
+          image,
+          description,
+          cardetails,
+          details,
+        } = req.body;
+        const car = await Addcar.findById(carId);
+        if (!car) {
+          return res.status(404).send({ message: "Car not found" });
+        }
+        car.carname = carname;
+        car.type = type;
+        car.model = model;
+        car.milage = milage;
+        car.perkm = perkm;
+        car.availablefrom = availablefrom;
+        car.availabletill = availabletill;
+        car.image = image;
+        car.description = description;
+        car.cardetails = cardetails;
+        car.details = details;
+        await car.save();
+        res.send({ message: "Car updated successfully" });
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
 }
 
+const deleteCar = async (req, res) => {
+    try {
+        const carId = req.params.id;
+        const car = await Addcar.findByIdAndDelete(carId);
+        if (!car) {
+          return res.status(404).send({ message: "Car not found" });
+        }
+        res.send({ message: "Car deleted successfully" });
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
+}
 
 
 module.exports = {
 
-    getALLCarDetails,CreateAddCar,editAddedCar,AddCarData,createCarDetails
+    getALLCarDetails,CreateAddCar,editAddedCar,AddCarData,createCarDetails,deleteCar
 
 }
