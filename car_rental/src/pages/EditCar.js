@@ -33,9 +33,9 @@ function EditCar(singlecar) {
   const HandleImage = () => {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "cardata");
-    data.append("cloud_name", "drfg4tq7u");
-    fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload",{
+    data.append("upload_preset", "carImage");
+    data.append("cloud_name", "dpndik2sj");
+    fetch("https://api.cloudinary.com/v1_1/dpndik2sj/image/upload",{
         method: "post",
         body: data
       })
@@ -50,7 +50,7 @@ function EditCar(singlecar) {
       });
   };
   const Submitdata = () => {
-    axios.put(`http://localhost:5000/api/v1 ${singlecar.singlecar._id}`, (formdata))
+    axios.put(`http://localhost:5000/carRental/car/editcar/:id`, (formdata))
       .then((resp) => {
         resp.json();
       })
@@ -105,7 +105,7 @@ window.location.reload();
             name="carname"
             onChange={HandleChange}
 
-            placeholder = {singlecar.singlecar.carname}
+            placeholder = {formdata.carname}
              />
         </div>
         <div className="dev1">
@@ -116,7 +116,7 @@ window.location.reload();
               name="type"
               className="inp-type"
               onChange={HandleChange}
-              placeholder={singlecar.singlecar.type}
+              placeholder={formdata.type}
                />
           </div>
 
@@ -127,7 +127,7 @@ window.location.reload();
               name="model"
               className="inp-model"
               onChange={HandleChange}
-              placeholder={singlecar.singlecar.model}
+              placeholder={formdata.model}
             />
           </div>
         </div>
@@ -140,7 +140,7 @@ window.location.reload();
               name="milage"
               className="inp-milage"
               onChange={HandleChange}
-              placeholder={singlecar.singlecar.milage}
+              placeholder={formdata.milage}
             />
           </div>
 
@@ -150,7 +150,7 @@ window.location.reload();
               id="perkm"
               name="perkm"
               onChange={HandleChange}
-              placeholder={singlecar.singlecar.perkm}
+              placeholder={formdata.perkm}
             ></input>
 
           </div>
@@ -183,7 +183,7 @@ window.location.reload();
             <textarea id="cd" rows="4" colums="100"
               name="description"
               onChange={HandleChange}
-              placeholder={singlecar.singlecar.description}
+              placeholder={formdata.description}
             ></textarea>
 
           </div>
@@ -210,12 +210,12 @@ window.location.reload();
           <textarea id="cd" rows="4" colums="100"
             name="cardetails"
             onChange={HandleChange}
-            placeholder={singlecar.singlecar.cardetails}></textarea>
+            placeholder={formdata.cardetails}></textarea>
 
           <label for="details">Details </label>
           <textarea id="details" rows="4" colums="100"
             name="details"
-            onChange={HandleChange} placeholder={singlecar.singlecar.details}></textarea>
+            onChange={HandleChange} placeholder={formdata.details}></textarea>
         </div>
         <div className="btnss">
           <div>

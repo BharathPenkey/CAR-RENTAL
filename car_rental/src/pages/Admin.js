@@ -41,8 +41,10 @@ const Admin = () => {
         <section style={{ width: "100vw" }}>
             {/* addding functionality to get images */}
           
+            
              { cars && cars.map((item, index) => {
                 return(
+                    <Link to='/editcar'>
                         <div key={index} className='cards'>
 
                             <div className='image_box'>
@@ -63,9 +65,11 @@ const Admin = () => {
                             </div>
 
                         </div>
+                        </Link>
                 )}
              )
                 }
+             
                    
         </section>
     </div >
