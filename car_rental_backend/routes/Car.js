@@ -1,6 +1,7 @@
 const express = require('express')
-const {getALLCarDetails,CreateAddCar,editAddedCar, createCarDetails,AddCarData}= require('../controllers/CarContollers')
+const {getALLCarDetails,CreateAddCar,editAddedCar, createCarDetails,AddCarData, deleteCar}= require('../controllers/CarContollers')
 const { getbookdetail,bookdetailcontrol,updatebooking} = require('../controllers/destinationControllers')
+const Addcar = require('../models/addCarModel');
 
 const router = express.Router();
 
@@ -11,8 +12,9 @@ router.post('/createCar', createCarDetails)
 
 router.get('/adminpageCars', AddCarData)
 
-router.put('/editcar/:id', editAddedCar)
+router.put("/editcar/:id", editAddedCar);
 router.post('/addcar',CreateAddCar)
+router.delete('/deleteCar/:id', deleteCar)
 
 
 

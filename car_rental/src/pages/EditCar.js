@@ -1,11 +1,8 @@
-
 import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/EditCar.css";
 import axios from "axios";
-
 // import AdminNav from "../components/AdminNav";
-
 function EditCar(singlecar) {
   const [image, setImage] = useState();
   const [url, setUrl] = useState("");
@@ -33,24 +30,25 @@ function EditCar(singlecar) {
   const HandleImage = () => {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "carImage");
-    data.append("cloud_name", "dpndik2sj");
-    fetch("https://api.cloudinary.com/v1_1/dpndik2sj/image/upload",{
-        method: "post",
-        body: data
-      })
-      .then(resp => resp.json())
-      .then((data) => {setFormdata({
-        ...formdata,
-        image: data.url
-      })
+    data.append("upload_preset", "cardata");
+    data.append("cloud_name", "drfg4tq7u");
+    fetch("https://api.cloudinary.com/v1_1/drfg4tq7u/upload", {
+      method: "post",
+      body: data
     })
+      .then(resp => resp.json())
+      .then((data) => {
+        setFormdata({
+          ...formdata,
+          image: data.url
+        })
+      })
       .catch((err) => {
         console.log(err)
       });
   };
   const Submitdata = () => {
-    axios.put(`http://localhost:5000/carRental/car/editcar/:id`, (formdata))
+    axios.put(`/carRental/car/editcar/${singlecar.singlecar._id}`, (formdata))
       .then((resp) => {
         resp.json();
       })
@@ -67,32 +65,27 @@ function EditCar(singlecar) {
     console.log(formdata);
     console.log(url)
     window.location.reload();
-
     // navigate('/admin')
   };
- const Deletedata =()=> {
-  axios.delete(`${singlecar.singlecar._id}`, (formdata))
-  .then((resp) => {
-    resp.json();
-    
-  })
-  .then((data)=>{
-    setUrl(data.url);
-    setFormdata({
-      ...formdata,
-      image: data.url
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-console.log(formdata);
-console.log(url)
-window.location.reload();
-};
-
- 
-
+  const Deletedata = () => {
+    axios.delete(`/carRental/car/deleteCar/${singlecar.singlecar._id}`, (formdata))
+      .then((resp) => {
+        resp.json();
+      })
+      .then((data) => {
+        setUrl(data.url);
+        setFormdata({
+          ...formdata,
+          image: data.url
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log(formdata);
+    console.log(url)
+    window.location.reload();
+  };
   return (<>
     {/* <AdminNav /> */}
     <br />
@@ -104,9 +97,8 @@ window.location.reload();
           <input type="text"
             name="carname"
             onChange={HandleChange}
-
-            placeholder = {formdata.carname}
-             />
+            placeholder={singlecar.singlecar.carname}
+          />
         </div>
         <div className="dev1">
           <div className="devv">
@@ -116,10 +108,9 @@ window.location.reload();
               name="type"
               className="inp-type"
               onChange={HandleChange}
-              placeholder={formdata.type}
-               />
+              placeholder={singlecar.singlecar.type}
+            />
           </div>
-
           <div className="dev">
             <label for="model">Model </label>
             <input
@@ -127,11 +118,10 @@ window.location.reload();
               name="model"
               className="inp-model"
               onChange={HandleChange}
-              placeholder={formdata.model}
+              placeholder={singlecar.singlecar.model}
             />
           </div>
         </div>
-
         <div className="dev2">
           <div className="devv">
             <label for="milage">Milage </label>
@@ -140,42 +130,35 @@ window.location.reload();
               name="milage"
               className="inp-milage"
               onChange={HandleChange}
-              placeholder={formdata.milage}
+              placeholder={singlecar.singlecar.milage}
             />
           </div>
-
           <div className="dev">
             <label for="perkm">perKM </label>
             <input type="number"
               id="perkm"
               name="perkm"
               onChange={HandleChange}
-              placeholder={formdata.perkm}
+              placeholder={singlecar.singlecar.perkm}
             ></input>
-
           </div>
         </div>
-
         <div className="dev3">
           <div className="devv">
             <label for="doa">Available from </label>
             <input type="date"
               id="doa"
               name="availablefrom"
-
               onChange={HandleChange}
             ></input>
           </div>
-
           <div className="dev">
             <label for="dt">Available till </label>
             <input type="date" id="dt"
               name="availabletill"
               onChange={HandleChange}
             ></input>
-
           </div>
-
         </div>
         <div className="dev4">
           <div className="CN">
@@ -183,19 +166,16 @@ window.location.reload();
             <textarea id="cd" rows="4" colums="100"
               name="description"
               onChange={HandleChange}
-              placeholder={formdata.description}
+              placeholder={singlecar.singlecar.description}
             ></textarea>
-
           </div>
         </div>
         <div className="c-btn"><Link to="/admin"><button id="cancel" >Cancel</button></Link></div>
-       
       </div>
       <div className="sec2">
         <div className="dev">
-          <div id="dev1"><label>Images </label><button className="addimg" 
-          onClick={HandleImage}>ADD</button></div>
-
+          <div id="dev1"><label>Images </label><button className="addimg"
+            onClick={HandleImage}>ADD</button></div>
           <input type="file"
             name="image"
             className="image"
@@ -203,39 +183,38 @@ window.location.reload();
               setImage(e.target.files[0])
             }}></input>
         </div>
-
-
         <div className="dev5">
           <label for="cd">Car details </label>
           <textarea id="cd" rows="4" colums="100"
             name="cardetails"
             onChange={HandleChange}
-            placeholder={formdata.cardetails}></textarea>
-
+            y placeholder={singlecar.singlecar.cardetails}></textarea>
           <label for="details">Details </label>
           <textarea id="details" rows="4" colums="100"
             name="details"
-            onChange={HandleChange} placeholder={formdata.details}></textarea>
+            onChange={HandleChange} placeholder={singlecar.singlecar.details}></textarea>
         </div>
         <div className="btnss">
           <div>
-            <Link to="/admin"><button className="Delete"
+            {/* <Link to="/admin"><button className="Delete"
             onClick={Deletedata}>Delete </button>
           </Link>
           </div>
           <div>
             <Link to="/admin"><button className="Save"
             onClick={Submitdata}>Save </button>
-             </Link>
+             </Link> */}
+            <button className="Delete"
+              onClick={Deletedata}>Delete </button>
           </div>
-          
+          <div>
+            <button className="Save"
+              onClick={Submitdata}>Save </button>
+          </div>
         </div>
-      </div> 
+      </div>
     </div>
   </>
-
   )
 }
-
-
 export default EditCar;
